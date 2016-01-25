@@ -1,0 +1,42 @@
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesPackage{ruler}
+   [2016/01/25 v0.1 style file ``ruler.sty''^^J
+    by Yuwsuke KIEDA]
+
+\def\@ruler@ne{\vrule height 0truept depth 2truept width .1truept}
+\def\@rulertw@{\vrule height 0truept depth 4truept width .2truept}
+\def\@rulerthr@@{\vrule height 0truept depth 6truept width .2truept}
+\def\@rulerf@ur{\vrule height 0truept depth 8truept width .2truept}
+\def\@ruler@core#1#2#3{\leftline{%
+$\vcenter{\hrule\hbox{\@rulerf@ur#1}}\,\,#2\,\mathrm{#3}$}}
+\def\s@ruler@core#1{%
+$\vcenter{\hrule\hbox{\@rulerf@ur#1}}$}
+\def\rulerspace#1{\hbox to .5truemm{\hfil#1}}
+\def\@rulerfiv@{%
+\rulerspace{\@ruler@ne}\rulerspace{\@rulertw@}%
+\rulerspace{\@ruler@ne}\rulerspace{\@rulertw@}%
+\rulerspace{\@ruler@ne}\rulerspace{\@rulertw@}%
+\rulerspace{\@ruler@ne}\rulerspace{\@rulertw@}%
+\rulerspace{\@ruler@ne}\rulerspace{\@rulerthr@@}%
+\rulerspace{\@ruler@ne}\rulerspace{\@rulertw@}%
+\rulerspace{\@ruler@ne}\rulerspace{\@rulertw@}%
+\rulerspace{\@ruler@ne}\rulerspace{\@rulertw@}%
+\rulerspace{\@ruler@ne}\rulerspace{\@rulertw@}%
+\rulerspace{\@ruler@ne}\rulerspace{\@rulerf@ur}}
+
+\def\ruler{\@ifstar{\s@ruler}{\@ruler}}
+\def\s@ruler{\s@ruler@core{%
+\@rulerfiv@\@rulerfiv@\@rulerfiv@\@rulerfiv@\@rulerfiv@%
+\@rulerfiv@\@rulerfiv@\@rulerfiv@\@rulerfiv@\@rulerfiv@%
+\@rulerfiv@\@rulerfiv@\@rulerfiv@\@rulerfiv@\@rulerfiv@%
+\@rulerfiv@\@rulerfiv@\@rulerfiv@\@rulerfiv@\@rulerfiv@%
+\@rulerfiv@\@rulerfiv@\@rulerfiv@\@rulerfiv@\@rulerfiv@%
+}}
+\def\@ruler{\@ruler@core{%
+\@rulerfiv@\@rulerfiv@\@rulerfiv@\@rulerfiv@\@rulerfiv@%
+\@rulerfiv@\@rulerfiv@\@rulerfiv@\@rulerfiv@\@rulerfiv@%
+\@rulerfiv@\@rulerfiv@\@rulerfiv@\@rulerfiv@\@rulerfiv@%
+\@rulerfiv@\@rulerfiv@\@rulerfiv@\@rulerfiv@\@rulerfiv@%
+\@rulerfiv@\@rulerfiv@\@rulerfiv@\@rulerfiv@\@rulerfiv@%
+}{250}{mm}}
+\endinput
